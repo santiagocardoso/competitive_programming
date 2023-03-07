@@ -13,9 +13,7 @@ int main() {
             cout << "NO" << endl;
 
         t--;
-
-    };
+    }
 
     return 0;
 }
- 
