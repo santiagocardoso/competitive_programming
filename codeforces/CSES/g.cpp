@@ -31,7 +31,7 @@ int main() {
         index[a[i]] = i + 1;
     }
 
-    if(f == 0)
+    if (f == 0)
         cout << -1 << endl;
 
     return 0;
