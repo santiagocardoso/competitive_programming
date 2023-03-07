@@ -1,0 +1,67 @@
+set nocompatible 
+syntax on
+filetype plugin on
+:colorscheme default 
+
+set number
+set relativenumber
+
+" tab settings
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+" stop auto commenting
+set formatoptions-=cro
+
+" spell check
+" set spell
+" set spelllang=pt_br,en_us
+set nospell
+
+set autoindent
+set smartindent
+set wrap
+set fileformat=unix
+set encoding=utf-8
+set laststatus=2
+set showmatch
+set clipboard=unnamedplus
+
+" smart search
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" start workspace
+set termwinsize=18x0
+nnoremap <c-j> <Esc>:Lex<cr>:vertical resize 40<cr><c-w><c-l>:below term<cr>clear<cr><c-w><c-k>
+nnoremap <c-k> <Esc>:Lex<cr><c-w><c-j><cr>exit<cr><c-w><c-w><Esc>:wq<cr>
+
+" open code ambient
+nnoremap <F1> :r ~/projects/bib/cp.cpp<Return>kdd14jo
+nnoremap <F2> :r ~/projects/bib/code.c<Return>kdd3jo
+
+" open/close explorer/terminal
+inoremap <c-b> <Esc>:Lex<cr>:vertical resize 40<cr>
+nnoremap <c-b> <Esc>:Lex<cr>:vertical resize 40<cr>
+nnoremap <c-n> <Esc>:below term<cr>clear<cr>
+nnoremap <c-m> <c-w><c-j>exit<cr> 
+
+" clipboard configuration
+let s:clip = '/mnt/c/Windows/System32/clip.exe'
+if executable(s:clip)
+        augroup WSLYank
+                    autocmd!
+                            autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+                                augroup END
+                            endif
+ 
+        au BufNewFile,BufRead *.tex
+            \ set nocursorline |
+            \ set nornu |
+            \ set number |
+            \ let g:loaded_matchparen=1 |
+
