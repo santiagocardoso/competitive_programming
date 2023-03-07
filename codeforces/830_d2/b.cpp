@@ -32,8 +32,8 @@ int main() {
             cont--;
 
         cout << cont << endl;
-	}
+    }
 
-	return 0;
+    return 0;
 }
  
