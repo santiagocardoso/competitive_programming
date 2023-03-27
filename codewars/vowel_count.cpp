@@ -15,10 +15,3 @@ int getCount(string str){
 
     return num_vowels;
 }
-
-int main() {
-    string str; cin >> str;
-    cout << getCount(str) << endl;
-
-	return 0;
-}

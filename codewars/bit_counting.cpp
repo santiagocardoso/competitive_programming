@@ -17,10 +17,3 @@ unsigned int countBits(unsigned long long x) {
 
     return cont;
 }
-
-int main() {
-    int x; cin >> x;
-    cout << countBits(x) << endl;
-
-	return 0;
-}

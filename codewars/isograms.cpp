@@ -20,9 +20,3 @@ bool is_isogram(string str) {
 
     return 1;
 }
-
-int main() {
-    string str; cin >> str;
-    cout << is_isogram(str) << endl;
-	return 0;
-}
