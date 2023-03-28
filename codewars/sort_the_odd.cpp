@@ -7,16 +7,11 @@ typedef long long ll;
 typedef vector<int> vi;
 typedef vector<ll> vll;
 
-int main() {
-    int n; cin >> n;
-    vi array;
-    for (int i = 0; i < n; i++) {
-        int c; cin >> c;
-        array.pb(c);
-    }
-
-    // int size = sizeof(array) / sizeof(int);
-    int size = n;
+std::vector<int> sortArray(std::vector<int> array) {
+    if (array.empty())
+        return array;
+    
+    int size = array.size();
     for (int i = 0; i < size; i++)
         if (array[i] % 2 != 0) {
             for (int j = i; j < size; j++)
@@ -26,13 +21,6 @@ int main() {
                     array[j] = aux;
                 }
         }
-      
-    // return array;
-
-    for (int i = 0; i < n; i++) {
-        cout << array[i] << ' ';
-    }
-    cout << endl;
-
-	return 0;
+    
+    return array;
 }
